@@ -1,0 +1,14 @@
+Agdetagsearch Changelog
+-----------------
+
+v1.00
+todo
+- toggle button of the whole searchform as an arrow
+- ausgrauen wenn auswahl nicht möglich (nur bei all und optional machen)
+x- icon bilder unten raus und oben rein (https://stackoverflow.com/questions/7086098/how-to-create-radio-button-with-images?lq=1)
+x- select auch checkbox (http://www.wastedpotential.com/html-multi-checkbox-set-the-correct-way-to-group-checkboxes/)
+- edge funktioniert nicht
+   (https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/14022263/)
+   https://stackoverflow.com/questions/46503660/php-redirects-work-in-every-browser-but-edge
+x- reset nicht nach unten springen
+- paket anlegen und umstellen auf jrobe
