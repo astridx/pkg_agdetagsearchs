@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="1.0" method="upgrade">
+	<name>pkg_agdetagsearchs</name>
+	<packagename>agdetagsearchs</packagename>
+	<creationDate>2019-09-13</creationDate>
+	<packager>Astrid Günther</packager>
+	<copyright>(C) 2019 Astrid Günther + Dimitry Engbert. All rights reserved.</copyright>
+	<packageremail>info@astrid-guenther.de</packageremail>
+	<packagerurl>www.astrid-guenther.de</packagerurl>
+	<author>Astrid Günther</author>
+	<authorEmail>info@astrid-guenther.de</authorEmail>
+	<authorUrl>www.astrid-guenther.de</authorUrl>
+	<version>1.0.19</version>
+	<license>GNU General Public License version 2 or later</license>
+	<description>PKG_AGDETAGSEARCHS_XML_DESCRIPTION</description>
+	<scriptfile>script.php</scriptfile>
+	<files>
+		<!-- The id for each extension is the element stored in the DB -->
+		<file type="component" id="com_agdetagsearchs">com_agdetagsearchs.zip</file>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.pkg_agdetagsearchs.sys.ini</language>
+		<language tag="de-DE">de-DE/de-DE.pkg_agdetagsearchs.sys.ini</language>
+	</languages>
+	<updateservers>
+		<server type="extension" name="Agdetagserach Update Site">https://raw.githubusercontent.com/astridx/pkg_agdetagsearchs/master/agdetagsearchs-update.xml</server>
+	</updateservers>
+</extension>

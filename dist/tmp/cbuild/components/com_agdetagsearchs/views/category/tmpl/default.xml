@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="com_agdetagsearchs_category_view_default_title"
+			option="com_agdetagsearchs_category_view_default_option">
+		<help
+			key="JHELP_MENUS_MENU_ITEM_AGDETAGSEARCH_CATEGORY"
+		/>
+		<message>
+			<![CDATA[com_agdetagsearchs_category_view_default_desc]]>
+		</message>
+	</layout>
+
+	<!-- Add fields to the request variables for the layout. -->
+	<fields name="request">
+		<fieldset name="request">
+			<field
+				name="id"
+				type="category"
+				default="0"
+				description="COM_AGDETAGSEARCHS_FIELD_SELECT_CATEGORY_DESC"
+				extension="com_agdetagsearchs"
+				label="COM_AGDETAGSEARCHS_FIELD_SELECT_CATEGORY_LABEL"
+				required="true"
+			/>
+
+			<field
+				name="contenttype"
+				type="contenttype"
+				label="COM_AGDETAGSEARCHS_FIELD_TYPE_LABEL"
+				description="COM_AGDETAGSEARCHS_FIELD_TYPE_DESC"
+				multiple="true"
+			/>
+
+			<field
+				name="limit"
+				type="integer"
+				first="0"
+				last="100"
+				step="1"
+				default="20"
+				label="COM_AGDETAGSEARCHS_FIELD_AGTAGSLISTLIMIT_LABEL"
+				description="COM_AGDETAGSEARCHS_FIELD_AGTAGSLISTLIMIT_DESC"
+			/>
+
+			<field
+				name="agtagscolumnlimit"
+				type="integer"
+				first="1"
+				last="4"
+				step="1"
+				default="3"
+				label="COM_AGDETAGSEARCHS_FIELD_AGTAGSCOLUMNLIMIT_LABEL"
+				description="COM_AGDETAGSEARCHS_FIELD_AGTAGSCOLUMNLIMIT_DESC"
+			/>
+
+			<field
+				name="agtagscolumnlimit_fields"
+				type="integer"
+				first="1"
+				last="4"
+				step="1"
+				default="1"
+				label="COM_AGDETAGSEARCHS_FIELD_AGTAGSCOLUMNLIMIT_FIELDS_LABEL"
+				description="COM_AGDETAGSEARCHS_FIELD_AGTAGSCOLUMNLIMIT_FIELDS_DESC"
+			/>
+
+			<field
+				name="agde_language"
+				type="contentlanguage"
+				label="COM_AGDETAGSEARCHS_FIELD_LANGUAGE_FILTER_LABEL"
+				description="COM_AGDETAGSEARCHS_FIELD_LANGUAGE_FILTER_DESC"
+				default="all"
+				useglobal="true"
+			>
+				<option value="all">JALL</option>
+				<option value="current_language">JCURRENT</option>
+			</field>
+		</fieldset>
+	</fields>
+
+	<!-- Add fields to the parameters object for the layout. -->
+	<fields name="params">
+		<fieldset
+			name="basic"
+			label="COM_AGDETAGSEARCHS_OPTIONS_FORM">
+			<field name="spacer1" type="spacer" class="text"
+				   label="COM_AGDETAGSEARCHS_OPTIONS_FORM_DESC"
+			/>
+			<field
+				name="show_category_title"
+				type="list"
+				label="JGLOBAL_SHOW_CATEGORY_TITLE"
+				description="JGLOBAL_SHOW_CATEGORY_TITLE_DESC"
+				useglobal="true"
+			>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field
+				name="show_description"
+				type="list"
+				description="JGLOBAL_SHOW_CATEGORY_DESCRIPTION_DESC"
+				label="JGLOBAL_SHOW_CATEGORY_DESCRIPTION_LABEL"
+				useglobal="true"
+			>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field
+				name="show_description_image"
+				type="list"
+				description="JGLOBAL_SHOW_CATEGORY_IMAGE_DESC"
+				label="JGLOBAL_SHOW_CATEGORY_IMAGE_LABEL"
+				useglobal="true"
+			>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+		</fieldset>
+
+		<fieldset
+			name="advanced2"
+			label="COM_AGDETAGSEARCHS_FORMFIELD_LAYOUT_OPTIONS"
+		>
+			<field
+				name="spacer2"
+				type="spacer"
+				class="text"
+				label="COM_AGDETAGSEARCHS_OPTIONS_FORM_DESC"
+			/>
+
+			<field
+				name="show_headings"
+				type="list"
+				description="JGLOBAL_SHOW_HEADINGS_DESC"
+				label="JGLOBAL_SHOW_HEADINGS_LABEL"
+				useglobal="true"
+			>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field
+				name="show_link_description"
+				type="list"
+				description="COM_AGDETAGSEARCHS_FIELD_CONFIG_LINKDESCRIPTION_DESC"
+				label="COM_AGDETAGSEARCHS_FIELD_CONFIG_LINKDESCRIPTION_LABEL"
+				useglobal="true"
+			>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field
+				name="show_tagimage"
+				type="list"
+				description="COM_AGDETAGSEARCHS_FIELD_CONFIG_TAGIMAGE_DESC"
+				label="COM_AGDETAGSEARCHS_FIELD_CONFIG_TAGIMAGE_LABEL"
+				default="text"
+			>
+				<option value="image">COM_AGDETAGSEARCHS_FIELD_CONFIG_TAGIMAGE_IMAGE</option>
+				<option value="text">COM_AGDETAGSEARCHS_FIELD_CONFIG_TAGIMAGE_TEXT</option>
+				<option value="both">COM_AGDETAGSEARCHS_FIELD_CONFIG_TAGIMAGE_BOTH</option>
+			</field>
+			<field
+				name="show_tagimage_both_fontsize"
+				type="integer"
+				first="7"
+				last="30"
+				step="1"
+				default="13"
+				description="COM_AGDETAGSEARCHS_FIELD_CONFIG_TAGIMAGE_BOTH_FORMSIZE_DESC"
+				label="COM_AGDETAGSEARCHS_FIELD_CONFIG_TAGIMAGE_BOTH_FORMSIZE_LABEL"
+				showon="show_tagimage:both"
+			/>
+
+			<field
+				name="show_tagimage_both_margin_left_for_text"
+				type="integer"
+				first="0"
+				last="100"
+				step="1"
+				default="28"
+				description="COM_AGDETAGSEARCHS_FIELD_CONFIG_TAGIMAGE_BOTH_MARIGN_LEFT_DESC"
+				label="COM_AGDETAGSEARCHS_FIELD_CONFIG_TAGIMAGE_BOTH_MARIGN_LEFT_LABEL"
+				showon="show_tagimage:both"
+			/>
+
+		</fieldset>
+
+		<fieldset
+			name="advanced"
+			label="COM_AGDETAGSEARCHS_LIST_LAYOUT_OPTIONS"
+		>
+			<field
+				name="spacer2"
+				type="spacer"
+				class="text"
+				label="COM_AGDETAGSEARCHS_OPTIONS_FORM_DESC"
+			/>
+
+			<field
+				name="show_pagination"
+				type="list"
+				description="JGLOBAL_PAGINATION_DESC"
+				label="JGLOBAL_PAGINATION_LABEL"
+				useglobal="true"
+			>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+				<option value="2">JGLOBAL_AUTO</option>
+			</field>
+
+			<field
+				name="show_pagination_results"
+				type="list"
+				label="JGLOBAL_PAGINATION_RESULTS_LABEL"
+				description="JGLOBAL_PAGINATION_RESULTS_DESC"
+				useglobal="true"
+			>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+		</fieldset>
+
+	</fields>
+</metadata>
