@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <updates>
     <update>
-        <name>pkg_agdetagserachs</name>
+        <name>pkg_agdetagsearchs</name>
         <description>pkg_agdetagsearchs</description>
         <element>pkg_agdetagsearchs</element>
         <type>package</type>
@@ -19,7 +19,7 @@
         <targetplatform name="joomla" version="3.*"/>
     </update>
     <update>
-        <name>pkg_agdetagserachs</name>
+        <name>pkg_agdetagsearchs</name>
         <description>pkg_agdetagsearchs</description>
         <element>pkg_agdetagsearchs</element>
         <type>package</type>
