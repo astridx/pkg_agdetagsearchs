@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" method="upgrade">
+	<name>com_agdetagsearchs</name>
+	<author>Astrid Günther</author>
+	<creationDate>##DATE##</creationDate>
+	<copyright>(C) 2017 - ##YEAR## Astrid Günther + Dimitry Engbert. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@astrid-guenther.de</authorEmail>
+	<authorUrl>www.astrid-guenther.de</authorUrl>
+	<version>##VERSION##</version>
+	<description>COM_AGDETAGSEARCHS_XML_DESCRIPTION</description>
+	<scriptfile>script.php</scriptfile>
+	<install>
+		<sql>
+			<file charset="utf8" driver="mysql">sql/install.mysql.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file charset="utf8" driver="mysql">sql/uninstall.mysql.sql</file>
+		</sql>
+	</uninstall>
+	<files folder="components/com_agdetagsearchs">
+		##FRONTEND_COMPONENT_FILES##
+	</files>
+	<administration>
+		<menu img="class:agdetagsearchs">com_agdetagsearchs</menu>
+		<submenu>
+			<menu link="option=com_agdetagsearchs" view="links" img="class:agdetagsearchs"
+				  alt="Agdetagsearchs/Links">com_agdetagsearchs_links</menu>
+			<menu link="option=com_categories&amp;extension=com_agdetagsearchs"
+				  view="categories" img="class:agdetagsearchs-cat" alt="Agdetagsearchs/Searchforms">com_agdetagsearchs_searchforms</menu>
+		</submenu>
+		<files folder="administrator/components/com_agdetagsearchs">
+			##BACKEND_COMPONENT_FILES##
+		</files>
+	</administration>
+	<media folder="media/com_agdetagsearchs" destination="com_agdetagsearchs">
+		##MEDIA_FILES##
+	</media>
+</extension>
+
