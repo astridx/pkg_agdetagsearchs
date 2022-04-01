@@ -37,9 +37,9 @@ JFactory::getDocument()->addScriptDeclaration("
 		<div class="row-fluid">
 			<div class="span9">
 				<div class="form-vertical">
-					<?php echo $this->form->getControlGroup('fieldtype'); ?>
-					<?php echo $this->form->getControlGroup('tags'); ?>
-					<?php echo $this->form->getControlGroup('collapse'); ?>
+					<?php echo $this->form->renderFieldset('fieldtype'); ?>
+					<?php echo $this->form->renderFieldset('tags'); ?>
+					<?php echo $this->form->renderFieldset('collapse'); ?>
 				</div>
 			</div>
 			<div class="span3">
@@ -53,9 +53,9 @@ JFactory::getDocument()->addScriptDeclaration("
 		<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'images', JText::_('JGLOBAL_FIELDSET_IMAGE_OPTIONS', true)); ?>
 			<div class="row-fluid">
 				<div class="span6">
-					<?php echo $this->form->getControlGroup('images'); ?>
+					<?php echo $this->form->renderFieldset('images'); ?>
 					<?php foreach ($this->form->getGroup('images') as $field) : ?>
-						<?php echo $field->getControlGroup(); ?>
+						<?php //todo echo $field->renderFieldset(); ?>
 					<?php endforeach; ?>
 				</div>
 			</div>

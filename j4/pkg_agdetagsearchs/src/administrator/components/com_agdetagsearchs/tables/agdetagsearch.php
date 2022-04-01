@@ -37,8 +37,8 @@ class AgdetagsearchsTableAgdetagsearch extends JTable
 		// Set the published column alias
 		$this->setColumnAlias('published', 'state');
 
-		JTableObserverTags::createObserver($this, ['typeAlias' => 'com_agdetagsearchs.agdetagsearch']);
-		JTableObserverContenthistory::createObserver($this, ['typeAlias' => 'com_agdetagsearchs.agdetagsearch']);
+		//todoJTableObserverTags::createObserver($this, ['typeAlias' => 'com_agdetagsearchs.agdetagsearch']);
+		//todoJTableObserverContenthistory::createObserver($this, ['typeAlias' => 'com_agdetagsearchs.agdetagsearch']);
 	}
 
 	/**
