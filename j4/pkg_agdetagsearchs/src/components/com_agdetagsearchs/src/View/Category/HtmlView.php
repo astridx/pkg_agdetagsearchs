@@ -13,7 +13,7 @@ namespace AgdetagsearchsNamespace\Component\Agdetagsearchs\Site\View\Category;
 
 use Joomla\CMS\MVC\View\CategoryView;
 use AgdetagsearchsNamespace\Component\Agdetagsearchs\Site\Helper\RouteHelper;
-
+use Joomla\CMS\Filesystem\File;
 
 /**
  * HTML View class for the Agdetagsearchs component
@@ -69,19 +69,17 @@ class HtmlView extends CategoryView
 			$item->params->merge($temp);
 		}
 
-/*		jimport('joomla.filesystem.file');
-
 		$file = JPATH_ROOT . '/media/com_agdetagsearchs/js/disableifnotpossible.js';
 
 		if ($this->params->get('disable_formfields_if_no_result', '0')) {
 			// Datei erstellen oder skript einbinden
-			if (!JFile::exists($file)) {
+			if (!File::exists($file)) {
 				// We have to create the file
 				$htmldisablefields = $this->_getDisableQuery();
 				$content = implode("\n", $htmldisablefields);
 
 				// Write the file to disk
-				if (!JFile::write($file, $content)) {
+				if (!File::write($file, $content)) {
 					throw new RuntimeException(JText::_('COM_AGDETAGSEARCHS_ERROR_WRITE_FAILED'));
 				}
 
@@ -94,8 +92,8 @@ class HtmlView extends CategoryView
 			}
 		} else {
 			// Thank god that is not activated. So we can tidy up.
-			JFile::delete($file);
-		}*/
+			File::delete($file);
+		}
 
 		return parent::display($tpl);
 	}

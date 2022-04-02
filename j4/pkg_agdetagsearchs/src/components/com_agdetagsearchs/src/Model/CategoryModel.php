@@ -556,7 +556,7 @@ class CategoryModel extends ListModel
 		// Compute the agdetagsearch slug & link url.
 		$this->tagids = [];
 
-		$app = JFactory::getApplication();
+		$app = Factory::getApplication();
 
 		$this->results = [];
 		$this->resultSum = [];
@@ -567,7 +567,7 @@ class CategoryModel extends ListModel
 		$this->limit = $this->getState('limit');
 		$this->agtagscolumnlimit = $this->getState('agtagscolumnlimit');
 
-		$params = JComponentHelper::getParams('com_agdetagsearchs');
+		$params = ComponentHelper::getParams('com_agdetagsearchs');
 
 		// $anyOrAll = true;
 		$anyOrAll = $params->get('andor', 1);
@@ -589,8 +589,8 @@ class CategoryModel extends ListModel
 			}
 		}
 
-		$db = JFactory::getDbo();
-		$jhelpertags = new JHelperTags;
+		$db = Factory::getDbo();
+		$jhelpertags = new TagsHelper;
 
 		/*
 		 * @param   mixed    $tagId            Tag or array of tags to be matched

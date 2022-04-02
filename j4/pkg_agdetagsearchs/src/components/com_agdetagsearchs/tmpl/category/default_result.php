@@ -11,7 +11,11 @@ defined('_JEXEC') or die;
 // Save the results in the variable items and count them
 $this->items = $this->get('data');
 $items = $this->get('data');
-$total = $this->total;
+if (isset($this->total)) {
+	$total = $this->total;
+} else {
+	$total = 0;
+}
 $n = count($this->get('data'));
 
 $columns = 3;
@@ -49,7 +53,7 @@ if ($columns != 0) {
 
 ?>
 
-	<?php if ($this->resultSumUnique == false || $n == 0) : ?>
+	<?php if (!isset($this->resultSumUnique) || $this->resultSumUnique == false || $n == 0) : ?>
 		<p> <?php echo JText::_('COM_AGDETAGSEARCH_NO_ITEMS'); ?></p>
 	<?php else : ?>
 		<p><?php echo JText::plural('COM_AGDETAGSEARCH_ITEMS_FOUND', $total); ?></p>
