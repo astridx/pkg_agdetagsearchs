@@ -205,6 +205,7 @@ echo
 
 
 <?php
+print_r($item);
 $tagsData = $item->tags->getItemTags('com_agdetagsearchs.agdetagsearch', $item->id);
 $agde_searchtags = array();
 foreach ($tagsData as $tag)

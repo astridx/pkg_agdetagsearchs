@@ -19,7 +19,7 @@ $wa->registerAndUseStyle('stylefrontend', 'com_agdetagsearchs/stylefrontend.css'
 
 
 // Create a shortcut for params.
-$params    = $this->params;
+$params = $this->params;
 
 $image_button_formfield_up = $params->get('image_button_formfield_up', 'media/com_agdetagsearchs/images/arrows/circle_down.png');
 $image_button_formfield_down =	$params->get('image_button_formfield_down', 'media/com_agdetagsearchs/images/arrows/circle_left.png');
@@ -235,9 +235,9 @@ $html = [];
                     <?php endif;?>
                     <?php if ($item->fieldtype == 'checkbox') : ?>
                     <?php
-					if (isset($values[0])) {
-						echo HTMLHelper::_('select.radiolist', $agde_searchtags, 'agdetagsearchs_' . $item->alias . '[]', 'multiple class="inputbox"', 'value', 'text', $values[0]);
-					}
+					
+						echo HTMLHelper::_('select.radiolist', $agde_searchtags, 'agdetagsearchs_' . $item->alias . '[]', 'multiple class="inputbox"', 'value', 'text', $values);
+					
 					?>
                     <?php endif; ?>
                 </div>

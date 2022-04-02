@@ -131,8 +131,8 @@ class CategoryModel extends ListModel
 			// Some contexts may not use tags data at all, so we allow callers to disable loading tag data
 			if ($this->getState('load_tags', true))
 			{
-				$this->tags = new TagsHelper;
-				$this->tags->getItemTags('com_agdetagsearchs.agdetagsearch', $item->id);
+				$item->tags = new TagsHelper;
+				$item->tags->getItemTags('com_agdetagsearchs.agdetagsearch', $item->id);
 			}
 		}
 
@@ -522,11 +522,11 @@ class CategoryModel extends ListModel
 		$this->typesr = $this->getState('typesr');
 		$this->language = $this->getState('language');
 
-		$params = JComponentHelper::getParams('com_agdetagsearchs');
+		$params = ComponentHelper::getParams('com_agdetagsearchs');
 		$anyOrAll = true;
 
-		$db = JFactory::getDbo();
-		$jhelpertags = new JHelperTags;
+		$db = Factory::getDbo();
+		$jhelpertags = new TagsHelper;
 		$tagquery = $jhelpertags->getTagItemsQuery(
 			$tagid,
 			$this->typesr,

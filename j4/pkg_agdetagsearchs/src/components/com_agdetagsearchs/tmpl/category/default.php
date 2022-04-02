@@ -90,7 +90,7 @@ $tagsData = $category->tags->itemTags;
 		<?php endif; ?>
 
 		<div class="agdetagsearch_items toggletarget_form">
-		<?php echo $this->loadTemplate('items'); ?>
+			<?php echo $this->loadTemplate('items'); ?>
 		</div>
 
 		<div class="agdetagsearch_result toggletarget_form">
