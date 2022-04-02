@@ -56,20 +56,6 @@ $formBackgroundColor = $params->get('formBackgroundColor', '');
 $buttonColor_Symbol = $params->get('buttonColor_Symbol', '');
 $buttonColor =	$params->get('buttonColor', '');
 
-$dispatcher = JEventDispatcher::getInstance();
-
-$category->text = $category->description;
-$dispatcher->trigger('onContentPrepare', [$extension . '.categories', &$category, &$params, 0]);
-$category->description = $category->text;
-
-$results = $dispatcher->trigger('onContentAfterTitle', [$extension . '.categories', &$category, &$params, 0]);
-$afterDisplayTitle = trim(implode("\n", $results));
-
-$results = $dispatcher->trigger('onContentBeforeDisplay', [$extension . '.categories', &$category, &$params, 0]);
-$beforeDisplayContent = trim(implode("\n", $results));
-
-$results = $dispatcher->trigger('onContentAfterDisplay', [$extension . '.categories', &$category, &$params, 0]);
-$afterDisplayContent = trim(implode("\n", $results));
 
 /**
  * This will work for the core components but not necessarily for other components
@@ -98,24 +84,9 @@ $tagsData = $category->tags->itemTags;
 			<img src="<?php echo JURI::base() . $image_button_form_down ?>" class=" toggle_form toggle_symbol_form" />
 			</div>
 		<?php endif; ?>
-		<?php echo $afterDisplayTitle; ?>
 
 		<?php if ($params->get('show_cat_tags', 1)) : ?>
 			<?php echo JLayoutHelper::render('joomla.content.tags', $tagsData); ?>
-		<?php endif; ?>
-
-		<?php if ($beforeDisplayContent || $afterDisplayContent || $params->get('show_description', 1) || $params->def('show_description_image', 1)) : ?>
-			<div class="category-desc">
-				<?php if ($params->get('show_description_image') && $category->getParams()->get('image')) : ?>
-					<img src="<?php echo $category->getParams()->get('image'); ?>" alt="<?php echo htmlspecialchars($category->getParams()->get('image_alt'), ENT_COMPAT, 'UTF-8'); ?>"/>
-				<?php endif; ?>
-				<?php echo $beforeDisplayContent; ?>
-				<?php if ($params->get('show_description') && $category->description) : ?>
-					<?php echo JHtml::_('content.prepare', $category->description, '', $extension . '.category.description'); ?>
-				<?php endif; ?>
-				<?php echo $afterDisplayContent; ?>
-				<div class="clr"></div>
-			</div>
 		<?php endif; ?>
 
 		<div class="agdetagsearch_items toggletarget_form">

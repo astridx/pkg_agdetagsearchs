@@ -1,22 +1,22 @@
 <?php
 /**
  * @package     Joomla.Site
- * @subpackage  com_foos
+ * @subpackage  com_agdetagsearchs
  *
  * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace FooNamespace\Component\Foos\Site\View\Category;
+namespace AgdetagsearchsNamespace\Component\Agdetagsearchs\Site\View\Category;
 
 \defined('_JEXEC') or die;
 
 use Joomla\CMS\MVC\View\CategoryView;
-use FooNamespace\Component\Foos\Site\Helper\RouteHelper;
+use AgdetagsearchsNamespace\Component\Agdetagsearchs\Site\Helper\RouteHelper;
 
 
 /**
- * HTML View class for the Foos component
+ * HTML View class for the Agdetagsearchs component
  *
  * @since  __BUMP_VERSION__
  */
@@ -26,19 +26,19 @@ class HtmlView extends CategoryView
 	 * @var    string  The name of the extension for the category
 	 * @since  __BUMP_VERSION__
 	 */
-	protected  $extension = 'com_foos';
+	protected  $extension = 'com_agdetagsearchs';
 
 	/**
 	 * @var    string  Default title to use for page title
 	 * @since  __BUMP_VERSION__
 	 */
-	protected  $defaultPageTitle = 'COM_FOO_DEFAULT_PAGE_TITLE';
+	protected  $defaultPageTitle = 'COM_AGDETAGSEARCH_DEFAULT_PAGE_TITLE';
 
 	/**
 	 * @var    string  The name of the view to link individual items to
 	 * @since  __BUMP_VERSION__
 	 */
-	protected $viewName = 'foo';
+	protected $viewName = 'agdetagsearch';
 
 	/**
 	 * Run the standard Joomla plugins
@@ -69,6 +69,34 @@ class HtmlView extends CategoryView
 			$item->params->merge($temp);
 		}
 
+/*		jimport('joomla.filesystem.file');
+
+		$file = JPATH_ROOT . '/media/com_agdetagsearchs/js/disableifnotpossible.js';
+
+		if ($this->params->get('disable_formfields_if_no_result', '0')) {
+			// Datei erstellen oder skript einbinden
+			if (!JFile::exists($file)) {
+				// We have to create the file
+				$htmldisablefields = $this->_getDisableQuery();
+				$content = implode("\n", $htmldisablefields);
+
+				// Write the file to disk
+				if (!JFile::write($file, $content)) {
+					throw new RuntimeException(JText::_('COM_AGDETAGSEARCHS_ERROR_WRITE_FAILED'));
+				}
+
+				JHtml::_('jquery.framework');
+				JHtml::_('script', 'com_agdetagsearchs/disableifnotpossible.js', false, true);
+			} else {
+				// We can use the existing file
+				JHtml::_('jquery.framework');
+				JHtml::_('script', 'com_agdetagsearchs/disableifnotpossible.js', false, true);
+			}
+		} else {
+			// Thank god that is not activated. So we can tidy up.
+			JFile::delete($file);
+		}*/
+
 		return parent::display($tpl);
 	}
 
@@ -90,7 +118,7 @@ class HtmlView extends CategoryView
 			$path = array(array('title' => $this->category->title, 'link' => ''));
 			$category = $this->category->getParent();
 
-			while ((!isset($menu->query['option']) || $menu->query['option'] !== 'com_foos' || $menu->query['view'] === 'foo'
+			while ((!isset($menu->query['option']) || $menu->query['option'] !== 'com_agdetagsearchs' || $menu->query['view'] === 'agdetagsearch'
 				|| $id != $category->id) && $category->id > 1)
 			{
 				$path[] = array('title' => $category->title, 'link' => RouteHelper::getCategoryRoute($category->id, $category->language));
