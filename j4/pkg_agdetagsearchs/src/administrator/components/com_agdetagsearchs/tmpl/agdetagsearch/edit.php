@@ -45,17 +45,13 @@ $tmpl = $input->get('tmpl', '', 'cmd') === 'component' ? '&tmpl=component' : '';
 					<div class="col-md-6">
 						<?php echo $this->getForm()->renderField('fieldtype'); ?>
 						<?php echo $this->getForm()->renderField('collapse'); ?>
-						<?php echo $this->getForm()->renderField('tags'); ?>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-3">
 				<div class="card">
 					<div class="card-body">
-						<?php echo $this->getForm()->renderField('published'); ?>
-						<?php echo $this->getForm()->renderField('catid'); ?>
-						<?php echo $this->getForm()->renderField('access'); ?>
-						<?php echo $this->getForm()->renderField('language'); ?>
+						<?php echo LayoutHelper::render('joomla.edit.global', $this); ?>
 					</div>
 				</div>
 			</div>

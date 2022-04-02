@@ -38,65 +38,6 @@ class AgdetagsearchsController extends AdminController
 	public function __construct($config = array(), MVCFactoryInterface $factory = null, $app = null, $input = null)
 	{
 		parent::__construct($config, $factory, $app, $input);
-
-		$this->registerTask('unfeatured', 'featured');
-	}
-
-	/**
-	 * Method to toggle the featured setting of a list of agdetagsearchs.
-	 *
-	 * @return  void
-	 *
-	 * @since   __BUMP_VERSION__
-	 */
-	public function featured()
-	{
-		// Check for request forgeries
-		$this->checkToken();
-
-		$ids    = $this->input->get('cid', array(), 'array');
-		$values = array('featured' => 1, 'unfeatured' => 0);
-		$task   = $this->getTask();
-		$value  = ArrayHelper::getValue($values, $task, 0, 'int');
-
-		$model  = $this->getModel();
-
-		// Access checks.
-		foreach ($ids as $i => $id)
-		{
-			$item = $model->getItem($id);
-
-			if (!$this->app->getIdentity()->authorise('core.edit.state', 'com_agdetagsearchs.category.' . (int) $item->catid))
-			{
-				// Prune items that you can't change.
-				unset($ids[$i]);
-				$this->app->enqueueMessage(Text::_('JLIB_APPLICATION_ERROR_EDITSTATE_NOT_PERMITTED'), 'notice');
-			}
-		}
-
-		if (empty($ids))
-		{
-			$this->app->enqueueMessage(Text::_('COM_AGDETAGSEARCHS_NO_ITEM_SELECTED'), 'warning');
-		}
-		else
-		{
-			// Publish the items.
-			if (!$model->featured($ids, $value))
-			{
-				$this->app->enqueueMessage($model->getError(), 'warning');
-			}
-
-			if ($value == 1)
-			{
-				$message = Text::plural('COM_AGDETAGSEARCHS_N_ITEMS_FEATURED', count($ids));
-			}
-			else
-			{
-				$message = Text::plural('COM_AGDETAGSEARCHS_N_ITEMS_UNFEATURED', count($ids));
-			}
-		}
-
-		$this->setRedirect('index.php?option=com_agdetagsearchs&view=agdetagsearchs', $message);
 	}
 
 	/**

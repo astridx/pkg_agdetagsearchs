@@ -1,11 +1,11 @@
 <?php
 /**
- * @subpackage  Agdetagsearch
+ * @package     Joomla.Administrator
+ * @subpackage  com_agdetagsearchs
  *
- * @copyright   Copyright (C) 2018 Astrid Günther & Dimitry Engbert All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
-
 \defined('_JEXEC') or die;
 
 use Joomla\CMS\Application\ApplicationHelper;
@@ -17,7 +17,7 @@ use Joomla\CMS\Table\Table;
 use Joomla\CMS\Installer\InstallerScript;
 
 /**
- * Script file ofAgdetagsearchComponent
+ * Script file of Agdetagsearch Component
  *
  * @since  __BUMP_VERSION__
  */
@@ -50,7 +50,7 @@ class Com_AgdetagsearchsInstallerScript extends InstallerScript
 	 */
 	public function install($parent): bool
 	{
-		echo Text::_('COM_AGDETAGSEARCHS_INSTALLERSCRIPT_INSTALL');
+		echo Text::_('COM_FOOS_INSTALLERSCRIPT_INSTALL');
 
 		$db = Factory::getDbo();
 		$alias   = ApplicationHelper::stringURLSafe('AgdetagsearchUncategorised');
@@ -58,7 +58,7 @@ class Com_AgdetagsearchsInstallerScript extends InstallerScript
 		// Initialize a new category.
 		$category = Table::getInstance('Category');
 
-		$data = array(
+		$data = [
 			'extension' => 'com_agdetagsearchs',
 			'title' => 'AgdetagsearchUncategorised',
 			'alias' => $alias . '(en-GB)',
@@ -72,27 +72,24 @@ class Com_AgdetagsearchsInstallerScript extends InstallerScript
 			'created_time' => Factory::getDate()->toSql(),
 			'created_user_id' => (int) $this->getAdminId(),
 			'language' => 'en-GB',
-			'rules' => array(),
+			'rules' => [],
 			'parent_id' => 1,
-		);
+		];
 
 		$category->setLocation(1, 'last-child');
 
 		// Bind the data to the table
-		if (!$category->bind($data))
-		{
+		if (!$category->bind($data)) {
 			return false;
 		}
 
 		// Check to make sure our data is valid.
-		if (!$category->check())
-		{
+		if (!$category->check()) {
 			return false;
 		}
 
 		// Store the category.
-		if (!$category->store(true))
-		{
+		if (!$category->store(true)) {
 			return false;
 		}
 
@@ -112,7 +109,7 @@ class Com_AgdetagsearchsInstallerScript extends InstallerScript
 	 */
 	public function uninstall($parent): bool
 	{
-		echo Text::_('COM_AGDETAGSEARCHS_INSTALLERSCRIPT_UNINSTALL');
+		echo Text::_('COM_FOOS_INSTALLERSCRIPT_UNINSTALL');
 
 		return true;
 	}
@@ -129,7 +126,7 @@ class Com_AgdetagsearchsInstallerScript extends InstallerScript
 	 */
 	public function update($parent): bool
 	{
-		echo Text::_('COM_AGDETAGSEARCHS_INSTALLERSCRIPT_UPDATE');
+		echo Text::_('COM_FOOS_INSTALLERSCRIPT_UPDATE');
 
 		$this->addDashboardMenu('agdetagsearch', 'agdetagsearch');
 
@@ -150,11 +147,9 @@ class Com_AgdetagsearchsInstallerScript extends InstallerScript
 	 */
 	public function preflight($type, $parent): bool
 	{
-		if ($type !== 'uninstall')
-		{
+		if ($type !== 'uninstall') {
 			// Check for the minimum PHP version before continuing
-			if (!empty($this->minimumPHPVersion) && version_compare(PHP_VERSION, $this->minimumPHPVersion, '<'))
-			{
+			if (!empty($this->minimumPHPVersion) && version_compare(PHP_VERSION, $this->minimumPHPVersion, '<')) {
 				Log::add(
 					Text::sprintf('JLIB_INSTALLER_MINIMUM_PHP', $this->minimumPHPVersion),
 					Log::WARNING,
@@ -165,8 +160,7 @@ class Com_AgdetagsearchsInstallerScript extends InstallerScript
 			}
 
 			// Check for the minimum Joomla version before continuing
-			if (!empty($this->minimumJoomlaVersion) && version_compare(JVERSION, $this->minimumJoomlaVersion, '<'))
-			{
+			if (!empty($this->minimumJoomlaVersion) && version_compare(JVERSION, $this->minimumJoomlaVersion, '<')) {
 				Log::add(
 					Text::sprintf('JLIB_INSTALLER_MINIMUM_JOOMLA', $this->minimumJoomlaVersion),
 					Log::WARNING,
@@ -177,7 +171,7 @@ class Com_AgdetagsearchsInstallerScript extends InstallerScript
 			}
 		}
 
-		echo Text::_('COM_AGDETAGSEARCHS_INSTALLERSCRIPT_PREFLIGHT');
+		echo Text::_('COM_FOOS_INSTALLERSCRIPT_PREFLIGHT');
 
 		return true;
 	}
@@ -195,9 +189,9 @@ class Com_AgdetagsearchsInstallerScript extends InstallerScript
 	 */
 	public function postflight($type, $parent)
 	{
-		echo Text::_('COM_AGDETAGSEARCHS_INSTALLERSCRIPT_POSTFLIGHT');
+		echo Text::_('COM_FOOS_INSTALLERSCRIPT_POSTFLIGHT');
 
-		//$this->saveContentTypes();
+		$this->saveContentTypes();
 
 		return true;
 	}
@@ -239,8 +233,7 @@ class Com_AgdetagsearchsInstallerScript extends InstallerScript
 		$db->setQuery($query);
 		$id = $db->loadResult();
 
-		if (!$id || $id instanceof \Exception)
-		{
+		if (!$id || $id instanceof \Exception) {
 			return false;
 		}
 
@@ -258,14 +251,14 @@ class Com_AgdetagsearchsInstallerScript extends InstallerScript
 	{
 		$table = Table::getInstance('Contenttype', 'JTable');
 
-		$table->load(array('type_alias' => 'com_agdetagsearchs.agdetagsearch'));
+		$table->load(['type_alias' => 'com_agdetagsearchs.agdetagsearch']);
 
 		$tablestring = '{
 			"special": {
 			  "dbtable": "#__agdetagsearchs_details",
 			  "key": "id",
 			  "type": "AgdetagsearchTable",
-			  "prefix": "Joomla\\\\Component\\\\Agdetagsearchs\\\\Administrator\\\\Table\\\\",
+			  "prefix": "AgdetagsearchsNamespace\\\\Component\\\\Agdetagsearchs\\\\Administrator\\\\Table\\\\",
 			  "config": "array()"
 			},
 			"common": {
@@ -280,7 +273,7 @@ class Com_AgdetagsearchsInstallerScript extends InstallerScript
 		$fieldmapping = '{
 			"common": {
 			  "core_content_item_id": "id",
-			  "core_title": "name",
+			  "core_title": "title",
 			  "core_state": "published",
 			  "core_alias": "alias",
 			  "core_publish_up": "publish_up",
@@ -297,7 +290,7 @@ class Com_AgdetagsearchsInstallerScript extends InstallerScript
 			}
 		  }';
 
-		$contenttype = array();
+		$contenttype = [];
 		$contenttype['type_id'] = ($table->type_id) ? $table->type_id : 0;
 		$contenttype['type_title'] = 'Agdetagsearchs';
 		$contenttype['type_alias'] = 'com_agdetagsearchs.agdetagsearch';

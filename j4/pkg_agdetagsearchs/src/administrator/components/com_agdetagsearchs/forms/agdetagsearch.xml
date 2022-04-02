@@ -132,6 +132,7 @@
 		<field
 			name="tags"
 			type="tag"
+			class="advancedSelect"
 			label="COM_AGDETAGSEARCHS_FIELD_TAGS_LABEL"
 			description="COM_AGDETAGSEARCHS_FIELD_TAGS_DESC"
 			multiple="true"
