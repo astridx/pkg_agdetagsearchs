@@ -1,33 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
 	<fieldset
-		name="component"
-		label="COM_AGDETAGSEARCHS_COMPONENT_LABEL"
-		description="COM_AGDETAGSEARCHS_COMPONENT_DESC"
-		>
-		<field
-			name="save_history"
-			type="radio"
-			class="btn-group btn-group-yesno"
-			default="0"
-			label="JGLOBAL_SAVE_HISTORY_OPTIONS_LABEL"
-			description="JGLOBAL_SAVE_HISTORY_OPTIONS_DESC"
-			>
-			<option value="1">JYES</option>
-			<option value="0">JNO</option>
-		</field>
-		<field
-			name="history_limit"
-			type="text"
-			filter="integer"
-			label="JGLOBAL_HISTORY_LIMIT_OPTIONS_LABEL"
-			description="JGLOBAL_HISTORY_LIMIT_OPTIONS_DESC"
-			default="5"
-			showon="save_history:1"
-		/>
-	</fieldset>
-
-	<fieldset
 		name="category"
 		label="COM_AGDETAGSEARCHS_OPTIONS_FORM"
 		description="COM_AGDETAGSEARCHS_CATEGORY_DESC"

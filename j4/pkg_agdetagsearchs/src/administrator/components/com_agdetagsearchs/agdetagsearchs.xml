@@ -10,6 +10,7 @@
 	<version>##VERSION##</version>
 	<description>COM_AGDETAGSEARCHS_XML_DESCRIPTION</description>
 	<scriptfile>script.php</scriptfile>
+	<namespace path="src">AgdetagsearchsNamespace\Component\Agdetagsearchs</namespace>
 	<install>
 		<sql>
 			<file charset="utf8" driver="mysql">sql/install.mysql.sql</file>
@@ -26,10 +27,8 @@
 	<administration>
 		<menu img="class:agdetagsearchs">com_agdetagsearchs</menu>
 		<submenu>
-			<menu link="option=com_agdetagsearchs" view="links" img="class:agdetagsearchs"
-				  alt="Agdetagsearchs/Links">com_agdetagsearchs_links</menu>
-			<menu link="option=com_categories&amp;extension=com_agdetagsearchs"
-				  view="categories" img="class:agdetagsearchs-cat" alt="Agdetagsearchs/Searchforms">com_agdetagsearchs_searchforms</menu>
+			<menu link="option=com_agdetagsearchs" view="links" img="class:agdetagsearchs" alt="Agdetagsearchs/Links">com_agdetagsearchs_links</menu>
+			<menu link="option=com_categories&amp;extension=com_agdetagsearchs" view="categories" img="class:agdetagsearchs-cat" alt="Agdetagsearchs/Searchforms">com_agdetagsearchs_searchforms</menu>
 		</submenu>
 		<files folder="administrator/components/com_agdetagsearchs">
 			##BACKEND_COMPONENT_FILES##
@@ -38,5 +37,9 @@
 	<media folder="media/com_agdetagsearchs" destination="com_agdetagsearchs">
 		##MEDIA_FILES##
 	</media>
+	<changelogurl>https://raw.githubusercontent.com/astridx/pkg_agdetagsearchs/master/changelog.xml</changelogurl>
+	<updateservers>
+		<server type="extension" name="Agdetagserach Update Site">https://raw.githubusercontent.com/astridx/pkg_agdetagsearchs/master/agdetagsearchs-update4.xml</server>
+	</updateservers>
 </extension>
 

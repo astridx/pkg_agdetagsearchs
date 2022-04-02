@@ -15,14 +15,9 @@
 	<description>PKG_AGDETAGSEARCHS_XML_DESCRIPTION</description>
 	<scriptfile>script.php</scriptfile>
 	<files>
-		<!-- The id for each extension is the element stored in the DB -->
 		<file type="component" id="com_agdetagsearchs">com_agdetagsearchs.zip</file>
 	</files>
-	<languages folder="language">
-		<language tag="en-GB">en-GB/en-GB.pkg_agdetagsearchs.sys.ini</language>
-		<language tag="de-DE">de-DE/de-DE.pkg_agdetagsearchs.sys.ini</language>
-	</languages>
 	<updateservers>
-		<server type="extension" name="Agdetagserach Update Site">https://raw.githubusercontent.com/astridx/pkg_agdetagsearchs/master/agdetagsearchs-update.xml</server>
+		<server type="extension" name="Agdetagserach Update Site">https://raw.githubusercontent.com/astridx/pkg_agdetagsearchs/master/agdetagsearchs-update4.xml</server>
 	</updateservers>
 </extension>
