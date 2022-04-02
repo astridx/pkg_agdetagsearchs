@@ -71,8 +71,17 @@ class HtmlView extends BaseHtmlView
 	protected $sidebar;
 
 	/**
-	 * Method to display the view.
+	 * Is this view an Empty State
 	 *
+	 * @var   boolean
+	 *
+	 * @since 4.0.0
+	 */
+	private $isEmptyState = false;
+
+	/**
+	 * Method to display the view.
+	 * 
 	 * @param   string  $tpl  A template file to load. [optional]
 	 *
 	 * @return  void
@@ -86,6 +95,11 @@ class HtmlView extends BaseHtmlView
 		$this->filterForm = $this->get('FilterForm');
 		$this->activeFilters = $this->get('ActiveFilters');
 		$this->state = $this->get('State');
+
+		if (!\count($this->items) && $this->isEmptyState = $this->get('IsEmptyState'))
+		{
+			$this->setLayout('emptystate');
+		}
 
 		// Check for errors.
 		if (count($errors = $this->get('Errors')))

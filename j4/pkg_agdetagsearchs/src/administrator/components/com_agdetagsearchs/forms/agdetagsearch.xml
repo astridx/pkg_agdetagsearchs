@@ -77,7 +77,7 @@
 		<field
 			name="publish_up"
 			type="calendar"
-			label="COM_AGDETAGSEARCHS_FIELD_PUBLISH_UP_LABEL"
+			label="JGLOBAL_FIELD_PUBLISH_UP_LABEL"
 			translateformat="true"
 			showtime="true"
 			size="22"
@@ -87,7 +87,7 @@
 		<field
 			name="publish_down"
 			type="calendar"
-			label="COM_AGDETAGSEARCHS_FIELD_PUBLISH_DOWN_LABEL"
+			label="JGLOBAL_FIELD_PUBLISH_DOWN_LABEL"
 			translateformat="true"
 			showtime="true"
 			size="22"
@@ -129,15 +129,54 @@
 			label="JFIELD_ORDERING_LABEL"
 			content_type="com_agdetagsearchs.agdetagsearch"
 		/>
-
 		<field
 			name="tags"
 			type="tag"
-			label="JTAG"
-			class="advancedSelect"
+			label="COM_AGDETAGSEARCHS_FIELD_TAGS_LABEL"
+			description="COM_AGDETAGSEARCHS_FIELD_TAGS_DESC"
 			multiple="true"
+			required="true"
 		/>
+
 	</fieldset>
+
+	<fields
+		name="images"
+	>
+		<fieldset
+			name="images"
+			label="JGLOBAL_FIELDSET_IMAGE_OPTIONS"
+		>
+			<field
+				name="image_first"
+				type="media"
+				label="COM_AGDETAGSEARCHS_FIELD_FIRST_LABEL"
+				description="COM_AGDETAGSEARCHS_FIELD_FIRST_DESC"
+			/>
+
+			<field
+				name="float_first"
+				type="list"
+				label="COM_AGDETAGSEARCHS_FLOAT_LABEL"
+				description="COM_AGDETAGSEARCHS_FLOAT_DESC"
+				useglobal="true"
+			>
+				<option value="right">COM_AGDETAGSEARCHS_RIGHT</option>
+				<option value="left">COM_AGDETAGSEARCHS_LEFT</option>
+				<option value="none">COM_AGDETAGSEARCHS_NONE</option>
+			</field>
+
+			<field
+				name="image_first_alt"
+				type="text"
+				label="COM_AGDETAGSEARCHS_FIELD_IMAGE_ALT_LABEL"
+				description="COM_AGDETAGSEARCHS_FIELD_IMAGE_ALT_DESC"
+				size="20"
+			/>
+
+		</fieldset>
+	</fields>
+
 	<fields name="params" label="JGLOBAL_FIELDSET_DISPLAY_OPTIONS">
 		<fieldset name="display" label="JGLOBAL_FIELDSET_DISPLAY_OPTIONS">
 			<field

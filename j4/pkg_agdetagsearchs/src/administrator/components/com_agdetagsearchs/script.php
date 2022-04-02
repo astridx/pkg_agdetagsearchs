@@ -197,7 +197,7 @@ class Com_AgdetagsearchsInstallerScript extends InstallerScript
 	{
 		echo Text::_('COM_AGDETAGSEARCHS_INSTALLERSCRIPT_POSTFLIGHT');
 
-		$this->saveContentTypes();
+		//$this->saveContentTypes();
 
 		return true;
 	}
@@ -262,7 +262,7 @@ class Com_AgdetagsearchsInstallerScript extends InstallerScript
 
 		$tablestring = '{
 			"special": {
-			  "dbtable": "#__agdetagsearchs",
+			  "dbtable": "#__agdetagsearchs_details",
 			  "key": "id",
 			  "type": "AgdetagsearchTable",
 			  "prefix": "Joomla\\\\Component\\\\Agdetagsearchs\\\\Administrator\\\\Table\\\\",
