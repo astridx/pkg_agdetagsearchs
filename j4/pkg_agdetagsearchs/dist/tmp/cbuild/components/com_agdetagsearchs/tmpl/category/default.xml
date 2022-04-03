@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_AGDETAGSEARCHS_CATEGORY_VIEW_DEFAULT_TITLE">
+		<help
+			key = "JHELP_MENUS_MENU_ITEM_FOO_CATEGORY"
+		/>
+		<message>
+			<![CDATA[COM_AGDETAGSEARCHS_CATEGORY_VIEW_DEFAULT_DESC]]>
+		</message>
+	</layout>
+
+	<!-- Add fields to the request variables for the layout. -->
+	<fields name="request">
+		<fieldset
+			name="request"
+			addfieldprefix="Joomla\Component\Categories\Administrator\Field"
+			>
+			<field
+				name="id"
+				type="modal_category"
+				label="COM_AGDETAGSEARCHS_FIELD_CATEGORY_LABEL"
+				extension="com_agdetagsearchs"
+				required="true"
+				select="true"
+				new="true"
+				edit="true"
+				clear="true"
+			/>
+			<field
+				name="types"
+				type="contenttype"
+				label="COM_TAGS_FIELD_TYPE_LABEL"
+				layout="joomla.form.field.list-fancy-select"
+				multiple="true"
+			/>
+
+			<field
+				name="tag_list_language_filter"
+				type="contentlanguage"
+				label="COM_TAGS_FIELD_LANGUAGE_FILTER_LABEL"
+				default=""
+				useglobal="true"
+				>
+				<option value="all">JALL</option>
+				<option value="current_language">JCURRENT</option>
+			</field>
+		</fieldset>
+	</fields>
+	<fields name="params">
+		<fieldset name="basic" label="JGLOBAL_FIELDSET_DISPLAY_OPTIONS">
+			<field
+				name="show_pagination"
+				type="list"
+				label="JGLOBAL_PAGINATION_LABEL"
+				useglobal="true"
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+				<option value="2">JGLOBAL_AUTO</option>
+			</field>
+
+			<field
+				name="show_pagination_results"
+				type="list"
+				label="JGLOBAL_PAGINATION_RESULTS_LABEL"
+				useglobal="true"
+				class="custom-select-color-state"
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+		</fieldset>
+	</fields>
+</metadata>

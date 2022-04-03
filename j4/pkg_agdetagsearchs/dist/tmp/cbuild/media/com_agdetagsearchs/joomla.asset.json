@@ -1,0 +1,42 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "com_agdetagsearchs",
+  "version": "1.0.0",
+  "description": "Joomla CMS",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "com_agdetagsearchs.js.cookie",
+      "type": "script",
+      "uri": "com_agdetagsearchs/js.cookie.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "defer": true
+      }
+    },
+    {
+      "name": "com_agdetagsearchs.scriptbackend",
+      "type": "script",
+      "uri": "com_agdetagsearchs/scriptbackend.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "defer": true
+      }
+    },
+    {
+      "name": "com_agdetagsearchs.scriptfrontend",
+      "type": "script",
+      "uri": "com_agdetagsearchs/scriptfrontend.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "defer": true
+      }
+    }
+  ]
+}

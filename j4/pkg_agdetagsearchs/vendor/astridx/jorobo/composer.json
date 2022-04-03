@@ -1,0 +1,19 @@
+{
+  "name": "astridx/jorobo",
+  "description": "Tools and Tasks based on Robo.li for Joomla Extension Development and Releases",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Astrid Günther",
+      "email": "info@astrid-guenther.de"
+    }
+  ],
+  "autoload": {
+    "psr-4": {"Joomla\\Jorobo\\": "src"}
+  },
+  "require"    : {
+    "php": ">=5.4.0",
+    "consolidation/robo": "~1",
+    "joomla/github": "~1.3"
+  }
+}

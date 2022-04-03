@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" method="upgrade">
+	<name>com_agdetagsearchs</name>
+	<author>Astrid Günther</author>
+	<creationDate>2022-04-03</creationDate>
+	<copyright>(C) 2017 - 2022 Astrid Günther + Dimitry Engbert. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@astrid-guenther.de</authorEmail>
+	<authorUrl>www.astrid-guenther.de</authorUrl>
+	<version>4.0.0</version>
+	<description>COM_AGDETAGSEARCHS_XML_DESCRIPTION</description>
+	<scriptfile>script.php</scriptfile>
+	<namespace path="src">AgdetagsearchsNamespace\Component\Agdetagsearchs</namespace>
+	<install>
+		<sql>
+			<file charset="utf8" driver="mysql">sql/install.mysql.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file charset="utf8" driver="mysql">sql/uninstall.mysql.sql</file>
+		</sql>
+	</uninstall>
+	<files folder="components/com_agdetagsearchs">
+		<folder>language</folder>
+<folder>tmpl</folder>
+<folder>src</folder>
+	</files>
+	<administration>
+		<menu img="class:agdetagsearchs">com_agdetagsearchs</menu>
+		<submenu>
+			<menu link="option=com_agdetagsearchs" view="links" img="class:agdetagsearchs" alt="Agdetagsearchs/Links">com_agdetagsearchs_links</menu>
+			<menu link="option=com_categories&amp;extension=com_agdetagsearchs" view="categories" img="class:agdetagsearchs-cat" alt="Agdetagsearchs/Searchforms">com_agdetagsearchs_searchforms</menu>
+		</submenu>
+		<files folder="administrator/components/com_agdetagsearchs">
+			<folder>sql</folder>
+<folder>language</folder>
+<folder>tmpl</folder>
+<folder>forms</folder>
+<file>access.xml</file>
+<folder>src</folder>
+<folder>services</folder>
+<file>agdetagsearchs.xml</file>
+<file>config.xml</file>
+<file>script.php</file>
+		</files>
+	</administration>
+	<media folder="media/com_agdetagsearchs" destination="com_agdetagsearchs">
+		<folder>css</folder>
+<folder>js</folder>
+<folder>images</folder>
+<file>joomla.asset.json</file>
+	</media>
+	<changelogurl>https://raw.githubusercontent.com/astridx/pkg_agdetagsearchs/master/changelog.xml</changelogurl>
+	<updateservers>
+		<server type="extension" name="Agdetagserach Update Site">https://raw.githubusercontent.com/astridx/pkg_agdetagsearchs/master/agdetagsearchs-update4.xml</server>
+	</updateservers>
+</extension>
+
