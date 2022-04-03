@@ -21,6 +21,7 @@ use Joomla\CMS\MVC\Model\ListModel;
 use Joomla\CMS\Table\Table;
 use Joomla\Database\ParameterType;
 use Joomla\Registry\Registry;
+use Joomla\Utilities\ArrayHelper;
 
 /**
  * Single item model for a agdetagsearch
@@ -288,6 +289,26 @@ class CategoryModel extends ListModel
 		$limitstart = $app->input->get('limitstart', 0, 'uint');
 		$this->setState('list.start', $limitstart);
 
+
+		// Get the selected list of types from the request. If none are specified all are used.
+		$typesr = $app->input->get('types', array(), 'array');
+
+		if ($typesr)
+		{
+			// Implode is needed because the array can contain a string with a coma separated list of ids
+			$typesr = implode(',', $typesr);
+
+			// Sanitise
+			$typesr = explode(',', $typesr);
+			$typesr = ArrayHelper::toInteger($typesr);
+
+			$this->setState('typesr', $typesr);
+		}
+
+		$language = $app->input->getString('tag_list_language_filter');
+		$this->setState('language', $language);
+
+
 		// Optional filter text
 		$itemid = $app->input->get('Itemid', 0, 'int');
 		$search = $app->getUserStateFromRequest('com_agdetagsearchs.category.list.' . $itemid . '.filter-search', 'filter-search', '', 'string');
@@ -464,31 +485,6 @@ class CategoryModel extends ListModel
 			. $query->castAsChar($id) . ' END';
 	}
 
-	/**
-	 * Increment the hit counter for the category.
-	 *
-	 * @param   integer  $pk  Optional primary key of the category to increment.
-	 *
-	 * @return  boolean  True if successful; false otherwise and internal error set.
-	 *
-	 * @since   __BUMP_VERSION__
-	 */
-	public function hit($pk = 0)
-	{
-		$input = Factory::getApplication()->input;
-		$hitcount = $input->getInt('hitcount', 1);
-
-		if ($hitcount)
-		{
-			$pk = (!empty($pk)) ? $pk : (int) $this->getState('category.id');
-
-			$table = Table::getInstance('Category');
-			$table->load($pk);
-			$table->hit($pk);
-		}
-
-		return true;
-	}
 
 
 
@@ -554,34 +550,35 @@ class CategoryModel extends ListModel
 	{
 		// Prepare the data.
 		// Compute the agdetagsearch slug & link url.
-		$this->tagids = [];
+		$tagids = $this->tagids = [];
 
 		$app = Factory::getApplication();
 
-		$this->results = [];
-		$this->resultSum = [];
-		$this->resultSumUnique = [];
+		$result = $this->results = [];
+		$resultSum = $this->resultSum = [];
+		$resultSumUnique = $this->resultSumUnique = [];
 
-		$this->typesr = $this->getState('typesr');
-		$this->language = $this->getState('language');
-		$this->limit = $this->getState('limit');
-		$this->agtagscolumnlimit = $this->getState('agtagscolumnlimit');
+		$typesr = $this->typesr = $this->getState('typesr');
+		$language = $this->language = $this->getState('language');
+		$limit = $this->limit = $this->getState('limit');
+		$agtagscolumnlimit = $this->agtagscolumnlimit = $this->getState('agtagscolumnlimit');
 
 		$params = ComponentHelper::getParams('com_agdetagsearchs');
 
 		// $anyOrAll = true;
 		$anyOrAll = $params->get('andor', 1);
 
-		$this->items = $this->getItems();
+		$items = $this->items = $this->getItems();
 
 		foreach ($this->items as $item) {
 			$item->slug = $item->alias ? ($item->id . ':' . $item->alias) : $item->id;
 			$postvalue = 'agdetagsearchs_' . str_replace(' ', '', $item->alias);
-			$this->tagids[] = $this->getState($postvalue);
-			$item->tagids[$postvalue] = $this->getState($postvalue);
+			$pv = $app->input->get($postvalue);
+			$tagids = $this->tagids[] = $pv;
+			$item->tagids[$postvalue] = $pv;
 		}
 
-		$this->uniqtagids = [];
+		$unitqtagids = $this->uniqtagids = [];
 
 		foreach ($this->tagids as $tagid) {
 			if (is_array($tagid)) {
@@ -615,7 +612,7 @@ class CategoryModel extends ListModel
 		);
 
 		$db->setQuery($tagquery);
-		$this->result = $db->loadObjectList();
+		$result = $this->result = $db->loadObjectList();
 
 		$this->_total = count($this->result);
 

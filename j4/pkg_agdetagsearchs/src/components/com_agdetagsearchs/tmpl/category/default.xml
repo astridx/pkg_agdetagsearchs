@@ -26,6 +26,24 @@
 				edit="true"
 				clear="true"
 			/>
+			<field
+				name="types"
+				type="contenttype"
+				label="COM_TAGS_FIELD_TYPE_LABEL"
+				layout="joomla.form.field.list-fancy-select"
+				multiple="true"
+			/>
+
+			<field
+				name="tag_list_language_filter"
+				type="contentlanguage"
+				label="COM_TAGS_FIELD_LANGUAGE_FILTER_LABEL"
+				default=""
+				useglobal="true"
+				>
+				<option value="all">JALL</option>
+				<option value="current_language">JCURRENT</option>
+			</field>
 		</fieldset>
 	</fields>
 	<fields name="params">

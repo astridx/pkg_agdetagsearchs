@@ -8,6 +8,9 @@
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Helper\TagsHelper;
+use Joomla\Component\Tags\Site\Helper\RouteHelper;
+
 // Save the results in the variable items and count them
 $this->items = $this->get('data');
 $items = $this->get('data');
@@ -82,7 +85,7 @@ if ($columns != 0) {
 				<?php else : ?>
 					<?php //echo print_r($item) ?>
 					<h3>
-						<a href="<?php echo JRoute::_(TagsHelperRoute::getItemRoute($item->content_item_id, $item->core_alias, $item->core_catid, $item->core_language, $item->type_alias, $item->router)); ?>">
+						<a href="<?php echo JRoute::_(RouteHelper::getItemRoute($item->content_item_id, $item->core_alias, $item->core_catid, $item->core_language, $item->type_alias, $item->router)); ?>">
 							<?php echo $this->escape($item->core_title); ?>
 						</a>
 					</h3>
@@ -93,7 +96,7 @@ if ($columns != 0) {
 			<?php $images  = json_decode($item->core_images); ?>
 			<figure class="item_img img-intro">
 			<?php if ($this->params->get('tag_list_show_item_image', 1) == 1 && !empty($images->image_intro)) : ?>
-				<a href="<?php echo JRoute::_(TagsHelperRoute::getItemRoute($item->content_item_id, $item->core_alias, $item->core_catid, $item->core_language, $item->type_alias, $item->router)); ?>">
+				<a href="<?php echo JRoute::_(RouteHelper::getItemRoute($item->content_item_id, $item->core_alias, $item->core_catid, $item->core_language, $item->type_alias, $item->router)); ?>">
 				<img src="<?php echo htmlspecialchars($images->image_intro); ?>" alt="<?php echo htmlspecialchars($images->image_intro_alt); ?>">
 				</a>
 			<?php endif; ?>
@@ -119,7 +122,7 @@ if ($columns != 0) {
 
 			<!-- More Todo Security -->
 			<a class="btn btn-info" href="<?php
-			echo JRoute::_(TagsHelperRoute::getItemRoute($item->content_item_id, $item->core_alias, $item->core_catid, $item->core_language, $item->type_alias, $item->router));
+			echo JRoute::_(RouteHelper::getItemRoute($item->content_item_id, $item->core_alias, $item->core_catid, $item->core_language, $item->type_alias, $item->router));
 			?>">
 				<span>
 					<?php echo JText::_('COM_AGDETAGSEARCH_READ_MORE');  ?>

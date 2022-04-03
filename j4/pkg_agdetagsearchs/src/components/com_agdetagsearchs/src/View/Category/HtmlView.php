@@ -130,16 +130,10 @@ class HtmlView extends CategoryView
 				if (!File::write($file, $content)) {
 					throw new RuntimeException(JText::_('COM_AGDETAGSEARCHS_ERROR_WRITE_FAILED'));
 				}
-
-				HTMLHelper::_('jquery.framework');
-				HTMLHelper::_('script', 'com_agdetagsearchs/disableifnotpossible.js', false, true);
-			} else {
-				// We can use the existing file
-				HTMLHelper::_('jquery.framework');
-				HTMLHelper::_('script', 'com_agdetagsearchs/disableifnotpossible.js', false, true);
 			}
+			HTMLHelper::_('jquery.framework');
 		} else {
-			// Thank god that is not activated. So we can tidy up.
+			// It is not activated. So we can tidy up.
 			File::delete($file);
 		}
 

@@ -15,8 +15,8 @@ $wa = Factory::getApplication()->getDocument()->getWebAssetManager();
 
 $wa->registerAndUseScript('scriptfrontend','com_agdetagsearchs/scriptfrontend.js', [], ['defer' => true], []);
 $wa->registerAndUseScript('cookie','com_agdetagsearchs/js.cookie.js', [], ['defer' => true], []);
+$wa->registerAndUseScript('disableifnotpossible','com_agdetagsearchs/disableifnotpossible.js', [], ['defer' => true], []);
 $wa->registerAndUseStyle('stylefrontend', 'com_agdetagsearchs/stylefrontend.css', [], [], []);
-
 
 // Create a shortcut for params.
 $params = $this->params;
