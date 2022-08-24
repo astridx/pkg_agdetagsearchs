@@ -1,4 +1,22 @@
 <?xml version="1.0" ?>
 <updates>
+    <update>
+        <name>pkg_agdetagsearchs</name>
+        <description>pkg_agdetagsearchs</description>
+        <element>pkg_agdetagsearchs</element>
+        <type>package</type>
+        <client>site</client>
+        <version>4.1.0</version>
+        <infourl title="agdetagsearchs">https://github.com/astridx/pkg_agdetagsearchs/blob/v4.1.0/README.md</infourl>
+        <downloads>
+            <downloadurl type="full" format="zip">https://github.com/astridx/pkg_agdetagsearchs/releases/download/v4.1.0/pkg-agdetagsearchs-4.1.0.zip</downloadurl>
+        </downloads>
+        <tags>
+            <tag>stable</tag>
+        </tags>
+        <maintainer>Astrid Günther</maintainer>
+        <maintainerurl>https://astrid-guenther.de</maintainerurl>
+        <targetplatform name="joomla" version="4.*"/>
+    </update>
 
 </updates>

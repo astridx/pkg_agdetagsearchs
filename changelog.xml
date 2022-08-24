@@ -10,9 +10,9 @@
 	<changelog>
 		<element>pkg_agdetagsearchs</element>
 		<type>package</type>
-		<version>4.0.0</version>
+		<version>4.1.0</version>
 		<note>
-			<item>Initial Version</item>
+			<item>Fixes for ifelse and if else in tmpl files and fixes in language files</item>
 		</note>
 	</changelog>
 </changelogs>
