@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset
+		name="category"
+		label="COM_AGDETAGSEARCHS_OPTIONS_FORM"
+		description="COM_AGDETAGSEARCHS_CATEGORY_DESC"
+		>
+		<field
+			name="headingform_type"
+			type="list"
+			default="h2"
+			class="btn-group btn-group-yesno"
+			description="COM_AGDETAGSEARCHS_HEADINGFORM_TYPE_DESC"
+			label="COM_AGDETAGSEARCHS_HEADINGFORM_TYPE_LABEL"
+			>
+			<option value="h1">h1</option>
+			<option value="h2">h2</option>
+			<option value="h3">h3</option>
+			<option value="h4">h4</option>
+			<option value="h5">h5</option>
+			<option value="h6">h6</option>
+			<option value="p">p</option>
+			<option value="span">span</option>
+		</field>
+
+		<field
+			name="formBackgroundColor"
+			type="color"
+			label="COM_AGDETAGSEARCHS_FIELD_BACKGROUND_COLOR_LABEL"
+			description="COM_AGDETAGSEARCHS_FIELD_BACKGROUND_COLOR_DESC"
+			class=""
+			default=""
+		/>
+
+		<field
+			name="show_border"
+			type="radio"
+			class="btn-group btn-group-yesno"
+			default="0"
+			label="COM_AGDETAGSEARCHS_FIELD_BORDER_LABEL"
+			description="COM_AGDETAGSEARCHS_FIELD_BORDER_DESC"
+			>
+			<option value="1">JSHOW</option>
+			<option value="0">JHIDE</option>
+		</field>
+
+		<field
+			name="image_button_form_up"
+			type="media"
+			description="COM_AGDETAGSEARCHS_IMAGE_BUTTON_FORM_UP_DESC"
+			label="COM_AGDETAGSEARCHS_IMAGE_BUTTON_FORM_UP_LABEL"
+		/>
+
+		<field
+			name="image_button_form_down"
+			type="media"
+			description="COM_AGDETAGSEARCHS_IMAGE_BUTTON_FORM_DOWN_DESC"
+			label="COM_AGDETAGSEARCHS_IMAGE_BUTTON_FORM_DOWN_LABEL"
+		/>
+
+		<field
+			name="spacer1"
+			type="spacer"
+			hr="true"
+		/>
+
+		<field
+			name="andor"
+			type="list"
+			label="COM_AGDETAGSEARCHS_FIELD_ANDOR_LABEL"
+			description="COM_AGDETAGSEARCHS_FIELD_ANDOR_DESC"
+			default="0"
+			required="true"
+		>
+			<option value="0">COM_AGDETAGSEARCHS_FIELD_ALL</option>
+			<option value="1">COM_AGDETAGSEARCHS_FIELD_ANY</option>
+		</field>
+
+		<field
+			name="spacer2"
+			type="spacer"
+			hr="true"
+		/>
+
+		<field
+			name="category_layout"
+			type="componentlayout"
+			label="JGLOBAL_FIELD_LAYOUT_LABEL"
+			description="JGLOBAL_FIELD_LAYOUT_DESC"
+			menuitems="true"
+			extension="com_agdetagsearchs"
+			view="category"
+		/>
+
+		<field
+			name="spacer3"
+			type="spacer"
+			hr="true"
+		/>
+
+		<field
+			name="show_category_title"
+			type="radio"
+			class="btn-group btn-group-yesno"
+			label="JGLOBAL_SHOW_CATEGORY_TITLE"
+			description="JGLOBAL_SHOW_CATEGORY_TITLE_DESC"
+			default="1"
+			>
+			<option value="1">JSHOW</option>
+			<option value="0">JHIDE</option>
+		</field>
+
+		<field
+			name="show_description"
+			type="radio"
+			class="btn-group btn-group-yesno"
+			default="1"
+			label="JGLOBAL_SHOW_CATEGORY_DESCRIPTION_LABEL"
+			description="JGLOBAL_SHOW_CATEGORY_DESCRIPTION_DESC"
+			>
+			<option value="1">JSHOW</option>
+			<option value="0">JHIDE</option>
+		</field>
+
+		<field
+			name="show_description_image"
+			type="radio"
+			class="btn-group btn-group-yesno"
+			default="1"
+			label="JGLOBAL_SHOW_CATEGORY_IMAGE_LABEL"
+			description="JGLOBAL_SHOW_CATEGORY_IMAGE_DESC"
+			>
+			<option value="1">JSHOW</option>
+			<option value="0">JHIDE</option>
+		</field>
+
+		<field
+			name="spacer4"
+			type="spacer"
+			hr="true"
+		/>
+
+		<field
+			name="disable_formfields_if_no_result"
+			type="radio"
+			class="btn-group btn-group-yesno"
+			label="COM_AGDETAGSEARCHS_CONFIG_DISABLEFORMFIELD_LABEL"
+			description="COM_AGDETAGSEARCHS_CONFIG_DISABLEFORMFIELD_DESC"
+			default="0"
+			>
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+	</fieldset>
+
+	<fieldset
+		name="list_layout2"
+		label="COM_AGDETAGSEARCHS_FORMFIELD_LAYOUT_OPTIONS"
+		description="COM_AGDETAGSEARCHS_LIST_LAYOUT_DESC"
+		>
+		<field
+			name="show_headings"
+			type="radio"
+			default="1"
+			class="btn-group btn-group-yesno"
+			description="JGLOBAL_SHOW_HEADINGS_DESC"
+			label="JGLOBAL_SHOW_HEADINGS_LABEL"
+			>
+			<option value="1">JSHOW</option>
+			<option value="0">JHIDE</option>
+		</field>
+		<field
+			name="headings_type"
+			type="list"
+			default="h3"
+			class="btn-group btn-group-yesno"
+			description="COM_AGDETAGSEARCHS_HEADING_TYPE_DESC"
+			label="COM_AGDETAGSEARCHS_HEADING_TYPE_LABEL"
+			>
+			<option value="h3">h3</option>
+			<option value="h4">h4</option>
+			<option value="h5">h5</option>
+			<option value="h6">h6</option>
+			<option value="p">p</option>
+			<option value="span">span</option>
+		</field>
+		<field
+			name="image_button_formfield_up"
+			type="media"
+			description="COM_AGDETAGSEARCHS_IMAGE_BUTTON_FORMFIELD_UP_DESC"
+			label="COM_AGDETAGSEARCHS_IMAGE_BUTTON_FORMFIELD_UP_LABEL"
+		/>
+		<field
+			name="image_button_formfield_down"
+			type="media"
+			description="COM_AGDETAGSEARCHS_IMAGE_BUTTON_FORMFIELD_DOWN_DESC"
+			label="COM_AGDETAGSEARCHS_IMAGE_BUTTON_FORMFIELD_DOWN_LABEL"
+		/>
+	</fieldset>
+
+	<fieldset
+		name="list_layout"
+		label="COM_AGDETAGSEARCHS_LIST_LAYOUT_OPTIONS"
+		description="COM_AGDETAGSEARCHS_LIST_LAYOUT_DESC"
+		>
+
+		<field
+			name="show_pagination"
+			type="list"
+			default="2"
+			label="JGLOBAL_PAGINATION_LABEL"
+			description="JGLOBAL_PAGINATION_DESC"
+			>
+			<option value="1">JSHOW</option>
+			<option value="0">JHIDE</option>
+			<option value="2">JGLOBAL_AUTO</option>
+		</field>
+
+		<field
+			name="show_pagination_results"
+			type="radio"
+			class="btn-group btn-group-yesno"
+			default="1"
+			label="JGLOBAL_PAGINATION_RESULTS_LABEL"
+			description="JGLOBAL_PAGINATION_RESULTS_DESC"
+			>
+			<option value="1">JSHOW</option>
+			<option value="0">JHIDE</option>
+		</field>
+	</fieldset>
+
+	<fieldset
+		name="permissions"
+		description="JCONFIG_PERMISSIONS_DESC"
+		label="JCONFIG_PERMISSIONS_LABEL"
+		>
+		<field
+			name="rules"
+			type="rules"
+			component="com_agdetagsearchs"
+			filter="rules"
+			validate="rules"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			section="component"
+		/>
+	</fieldset>
+</config>
