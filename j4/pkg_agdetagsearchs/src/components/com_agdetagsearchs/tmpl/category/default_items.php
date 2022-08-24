@@ -73,7 +73,7 @@ $html = [];
 <?php $class_for_columns_of_formfields = ''; ?>
 <?php if ($this->state->get('agtagscolumnlimit_fields') == 3) : ?>
 	<?php $class_for_columns_of_formfields = 'id="agdesearch_ul_three"'; ?>
-<?php else if ($this->state->get('agtagscolumnlimit_fields') == 2) : ?>
+<?php elseif ($this->state->get('agtagscolumnlimit_fields') == 2) : ?>
 	<?php $class_for_columns_of_formfields = 'id="agdesearch_ul_two"'; ?>
 <?php else : ?>
 	<?php $class_for_columns_of_formfields = ''; ?>
@@ -105,7 +105,7 @@ $html = [];
 				} else {
 					$display = 'style="display:none;"';
 				}
-			} else if ($item->collapse == '1' && $params->get('show_headings')) {
+			} elseif ($item->collapse == '1' && $params->get('show_headings')) {
 				$display = 'style="display:none;"';
 			}
 			?>
@@ -214,7 +214,7 @@ $html = [];
 
 					if ($params->get('show_tagimage', 'text') == 'both') {
 						$labelcontent = $tagimage . '<br /><div style="margin-left:' . $params->get('show_tagimage_both_margin_left_for_text', '28') . 'px;font-size:' . $params->get('show_tagimage_both_fontsize', '13') . 'px;">' . $tagname . '</div><br />';
-					} else if ($params->get('show_tagimage', 'text') == 'image') {
+					} elseif ($params->get('show_tagimage', 'text') == 'image') {
 						$labelcontent = $tagimage;
 					} else {
 						$labelcontent = $tagname;
