@@ -112,7 +112,7 @@ if ($saveOrder && !empty($this->items)) {
 										<?php echo $this->escape($item->title); ?>
 									</div>
 									<?php $editIcon = '<span class="fa fa-pencil-square mr-2" aria-hidden="true"></span>'; ?>
-									<a class="hasTooltip" href="<?php echo Route::_('index.php?option=com_agdetagsearchs&task=agdetagsearch.edit&id=' . (int) $item->id); ?>" title="<?php echo Text::_('JACTION_EDIT'); ?> <?php echo $this->escape(addslashes($item->name)); ?>">
+									<a class="hasTooltip" href="<?php echo Route::_('index.php?option=com_agdetagsearchs&task=agdetagsearch.edit&id=' . (int) $item->id); ?>" title="<?php echo Text::_('JACTION_EDIT'); ?> <?php echo $this->escape(addslashes($item->title)); ?>">
 										<?php echo $editIcon; ?><?php echo $this->escape($item->title); ?></a>
 
 									<div class="small">
